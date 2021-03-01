@@ -1,0 +1,45 @@
+https://www.jianshu.com/p/2e87abfe89ff
+
+window的触发机制，是先按照自然时间将window划分，如果window大小是3秒，那么1分钟内会把window划分为如下的形式（注意window是左闭右开的）:
+
+[00:00:00,00:00:03)
+[00:00:03,00:00:06)
+...
+[00:00:57,00:01:00)
+
+如果window大小是10秒，则window会被分为如下的形式：
+
+[00:00:00,00:00:10)
+[00:00:10,00:00:20)
+...
+[00:00:50,00:01:00)
+
+window的设定无关数据本身，而是系统定义好了的。
+
+输入的数据中，根据自身的Event Time，将数据划分到不同的window中，如果window中有数据，则当watermark时间>=Event Time时，
+就符合了window触发的条件了，最终决定window触发，还是由数据本身的Event Time所属的window中的window_end_time决定。
+
+watermark触发条件
+此时，我们已经看到，window的触发要符合以下几个条件：
+
+1、watermark时间 >= window_end_time
+2、在[window_start_time,window_end_time)中有数据存在
+
+
+
+
+总结
+1.Flink如何处理乱序？
+watermark+window机制，window中可以对input进行按照Event Time排序，使得完全按照Event Time发生的顺序去处理数据，以达到处理乱序数据的目的。
+
+Flink何时触发window？
+1、watermark时间 >= window_end_time（对于out-of-order以及正常的数据而言）
+2、在[window_start_time,window_end_time)中有数据存在
+
+3.Flink应该如何设置最大乱序时间？
+这个要结合自己的业务以及数据情况去设置。如果maxOutOfOrderness设置的太小，而自身数据发送时由于网络等原因导致乱序或者late太多，那么最终的结果就是会有很多单条的数据在window中被触发，数据的正确性影响太大。
+
+作者：it_zzy
+链接：https://www.jianshu.com/p/2e87abfe89ff
+来源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。

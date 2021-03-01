@@ -1,0 +1,32 @@
+package zephyr.ribbon.config;
+
+import com.netflix.client.config.IClientConfig;
+import com.netflix.loadbalancer.AvailabilityFilteringRule;
+import com.netflix.loadbalancer.IPing;
+import com.netflix.loadbalancer.IRule;
+import com.netflix.loadbalancer.PingUrl;
+import org.springframework.context.annotation.Bean;
+
+/**
+ * Created by zephyr on 2019-07-14.
+ */
+// @Configuration
+public class RibbonConfig {
+
+    private IClientConfig ribbonClientConfig;
+
+    public RibbonConfig(IClientConfig ribbonClientConfig) {
+        this.ribbonClientConfig = ribbonClientConfig;
+    }
+
+    @Bean
+    public IPing ribbonPing(IClientConfig config) {
+        return new PingUrl();
+    }
+
+    @Bean
+    public IRule ribbonRule(IClientConfig config) {
+        return new AvailabilityFilteringRule();
+    }
+
+}

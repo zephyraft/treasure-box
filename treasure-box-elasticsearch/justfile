@@ -1,0 +1,6 @@
+# 默认执行
+_default:
+    @just --list -u
+
+up:
+    docker-compose up -d

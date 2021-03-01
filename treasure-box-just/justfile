@@ -1,0 +1,86 @@
+# 列出命令，默认按字母排序
+# --unsorted 不排序，即按文件顺序
+# --list 详细
+# --summary 简略
+# 别名
+alias alias := step1
+# 设置shell
+set shell := ["fish", "-c"]
+# 变量
+# 变量求值: --evaluate
+# 变量覆盖: just version=0.01 var / just --set version 0.01 var
+version := "0.2.7"
+LOVE := "love"
+string-with-tab             := "\t"
+string-with-newline         := "\n"
+string-with-carriage-return := "\r"
+string-with-double-quote    := "\""
+string-with-slash           := "\\"
+# 执行命令: `COMMAND`
+host := `echo 'localhost'`
+# 条件表达式: if ... {} else {}
+foo := if "2" == "2" { "Good!" } else { "1984" }
+# 环镜变量导出: export
+export A := "1"
+
+# 带_的为隐藏命令
+_default:
+    @just --list --unsorted
+# @ 不输出原命令
+recipe:
+    @echo 'This is another recipe.'
+# 被step2依赖，并带一个参数
+step1 p1:
+    @echo 'hello {{p1}}'
+# 依赖step1，并带参数
+step2: (step1 'world')
+    @echo 'step2'
+# 变量
+var:
+    @echo '{{version}}'
+# 转义大括号
+braces:
+    echo '{{'I {{LOVE}} curly braces!'}}'
+# - 忽略错误
+foo:
+    -cat foo
+    echo 'Done!'
+# 函数arch(), os(), os_family()
+fun:
+    @echo "This is an {{arch()}} | {{os()}} | {{os_family()}} machine".
+# 环境变量
+env:
+    @echo 'JAVA_HOME is {{env_var('JAVA_HOME')}}'
+    @echo 'env_error is {{env_var_or_default('error', 'default value')}}'
+# 调用目录
+invocation_dir:
+    @echo '{{invocation_directory()}}'
+# justfile文件-justfile(), justfile目录-justfile_directory()
+justfile_dir:
+    @echo '{{justfile()}}'
+    @echo '{{justfile_directory()}}'
+# 执行结果作为变量
+backticks:
+    @echo '{{host}}'
+# 条件表达式
+condition:
+    @echo '{{foo}}'
+    echo '{{ if foo == "bar" { "hello" } else { "goodbye" } }}'
+# 环镜变量导出
+export:
+    echo '{{A}}'
+# 带参数
+recipe_with_param p1 p2='default':
+    echo 'p1={{p1}}, p2={{p2}}'
+# 变长参数: + 1-n / * 0-n
+recipe_with_params *p:
+    echo 'p={{p}}'
+# recipe调用recipe
+step3:
+    @echo 'step3'
+    just step2
+# private
+_private:
+    echo 'private'
+
+

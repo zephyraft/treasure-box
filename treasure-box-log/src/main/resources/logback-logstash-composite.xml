@@ -1,0 +1,39 @@
+<!-- json格式 -->
+<configuration>
+    <appender name="json" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+            <providers>
+                <logLevel/>
+                <timestamp>
+                    <fieldName>timestamp</fieldName>
+                    <pattern>yyyy-MM-dd' 'HH:mm:ss.SSS</pattern>
+                </timestamp>
+                <loggerName/>
+                <threadName/>
+                <mdc>
+                    <!-- 内置对象-->
+<!--                    <fieldName>mdc</fieldName>-->
+                </mdc>
+                <message/>
+                <!-- 日志打印位置 -->
+<!--                <callerData>-->
+<!--                    <fieldName>caller</fieldName>-->
+<!--                </callerData>-->
+                <stackTrace>
+                    <throwableConverter class="net.logstash.logback.stacktrace.ShortenedThrowableConverter">
+                        <maxDepthPerThrowable>30</maxDepthPerThrowable>
+                        <maxLength>2048</maxLength>
+                        <shortenedClassNameLength>20</shortenedClassNameLength>
+                        <exclude>^sun\.reflect\..*\.invoke</exclude>
+                        <exclude>^net\.sf\.cglib\.proxy\.MethodProxy\.invoke</exclude>
+                        <rootCauseFirst>true</rootCauseFirst>
+                    </throwableConverter>
+                </stackTrace>
+            </providers>
+        </encoder>
+    </appender>
+    <root level="DEBUG">
+        <appender-ref ref="json" />
+    </root>
+</configuration>
+

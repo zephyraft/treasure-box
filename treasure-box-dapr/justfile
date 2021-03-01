@@ -1,0 +1,13 @@
+_default:
+    @just --list
+
+jar:
+    ../gradlew bootjar -Dorg.gradle.java.home=/Users/zhonghaoyuan/Library/Java/JavaVirtualMachines/adopt-openjdk-11.0.9.1/Contents/Home
+
+image: jar
+    docker rmi hub.svc.fusionskye.work/apps/dapr-test
+    docker build -t hub.svc.fusionskye.work/apps/dapr-test .
+    docker push hub.svc.fusionskye.work/apps/dapr-test
+
+restart:
+    kubectl rollout restart deployment/java-pubsub -n apps

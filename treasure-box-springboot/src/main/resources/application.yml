@@ -1,0 +1,14 @@
+debug: false
+server:
+  port: 8081
+spring:
+  profiles:
+    active: dev
+  application:
+    name: app-demo-prometheus
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus
+      base-path: /actuator

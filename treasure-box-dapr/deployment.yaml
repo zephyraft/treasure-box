@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-pubsub
+  namespace: apps
+  labels:
+    app: java-pubsub
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: java-pubsub
+  template:
+    metadata:
+      labels:
+        app: java-pubsub
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "java-pubsub"
+        dapr.io/app-port: "8080"
+    spec:
+      containers:
+        - name: dapr-test
+          image: hub.svc.fusionskye.work/apps/dapr-test:latest
+          ports:
+            - containerPort: 8080
+          imagePullPolicy: Always
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: java-pubsub
+  namespace: apps
+  labels:
+    app: java-pubsub
+spec:
+  selector:
+    app: java-pubsub
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: LoadBalancer
