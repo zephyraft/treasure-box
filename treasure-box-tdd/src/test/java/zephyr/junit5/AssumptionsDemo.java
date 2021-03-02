@@ -8,7 +8,6 @@ import static org.junit.jupiter.api.Assumptions.assumingThat;
 
 /**
  * 假设
- * Created by zephyr on 2019-09-27.
  */
 public class AssumptionsDemo {
 

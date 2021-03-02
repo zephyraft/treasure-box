@@ -17,8 +17,6 @@ import java.util.UUID;
  *        "expires_in":3600
  *      }
  *
- *
- * Created by zephyr on 2020/6/19.
  */
 public class AppIdDemo {
 

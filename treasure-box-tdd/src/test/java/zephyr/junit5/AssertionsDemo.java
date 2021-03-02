@@ -9,7 +9,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * 断言
- * Created by zephyr on 2019-09-27.
  */
 public class AssertionsDemo {
 

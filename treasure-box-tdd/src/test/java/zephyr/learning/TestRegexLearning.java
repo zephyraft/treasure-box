@@ -7,9 +7,7 @@ import java.util.regex.Pattern;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * Created by zephyr on 2019-09-29.
- */
+
 class TestRegexLearning {
 
     @Test

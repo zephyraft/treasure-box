@@ -7,9 +7,7 @@ import com.netflix.loadbalancer.IRule;
 import com.netflix.loadbalancer.PingUrl;
 import org.springframework.context.annotation.Bean;
 
-/**
- * Created by zephyr on 2019-07-14.
- */
+
 // @Configuration
 public class RibbonConfig {
 

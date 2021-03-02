@@ -6,9 +6,7 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
-/**
- * Created by zephyr on 2019-09-27.
- */
+
 @Slf4j
 @DisplayName("A special test case")
 public class StandardTests {

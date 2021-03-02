@@ -10,9 +10,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.util.Date;
 
-/**
- * Created by zephyr on 2020/6/19.
- */
+
 public class JWTDemo {
 
     public static String createToken(String appId, String appSecret) {

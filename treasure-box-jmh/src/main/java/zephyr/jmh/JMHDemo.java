@@ -5,9 +5,7 @@ import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Fork;
 import org.openjdk.jmh.annotations.Mode;
 
-/**
- * Created by zephyr on 2019-07-11.
- */
+
 public class JMHDemo {
 
     public static void main(String[] args) throws Exception {

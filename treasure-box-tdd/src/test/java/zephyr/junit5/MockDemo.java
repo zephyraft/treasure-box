@@ -8,9 +8,7 @@ import java.util.List;
 
 import static org.mockito.Mockito.*;
 
-/**
- * Created by zephyr on 2019-09-27.
- */
+
 @Slf4j
 public class MockDemo {
 
