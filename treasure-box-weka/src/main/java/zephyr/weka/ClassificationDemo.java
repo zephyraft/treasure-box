@@ -14,7 +14,7 @@ import weka.filters.unsupervised.attribute.Remove;
 
 import java.util.Random;
 
-public class WekaDemo {
+public class ClassificationDemo {
 
     public static void main(String[] args) throws Exception {
         /*
