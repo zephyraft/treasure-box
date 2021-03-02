@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Don't forget to set system property
+    -Dlog4j2.contextSelector=org.apache.logging.log4j.core.async.AsyncLoggerContextSelector
+to make all loggers asynchronous.
+
+see log4j2.component.properties
+-->
+
+<Configuration status="INFO">
+    <Appenders>
+        <Console name="stdout" target="SYSTEM_OUT">
+            <JsonLayout complete="false" compact="true">
+<!--                <KeyValuePair key="myCustomField" value="myCustomValue" />-->
+            </JsonLayout>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="info" includeLocation="false" additivity="false">
+            <AppenderRef ref="stdout"/>
+        </Root>
+    </Loggers>
+</Configuration>

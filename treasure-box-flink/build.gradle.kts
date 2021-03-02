@@ -5,11 +5,6 @@ plugins {
     kotlin("jvm")
 }
 
-val scalaBinaryVersion: String by project
-val flinkVersion: String by project
-val junitVersion: String by project
-val hiveVersion: String by project
-val hadoopVersion: String by project
 
 tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {
     dependencies {
@@ -20,6 +15,12 @@ tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {
 }
 
 dependencies {
+    val scalaBinaryVersion: String by project
+    val flinkVersion: String by project
+    val junitVersion: String by project
+    val hiveVersion: String by project
+    val hadoopVersion: String by project
+
     implementation("org.apache.flink", "flink-java", flinkVersion)
     implementation("org.apache.flink", "flink-streaming-java_${scalaBinaryVersion}", flinkVersion)
     implementation("org.apache.flink", "flink-clients_${scalaBinaryVersion}", flinkVersion)
@@ -38,6 +39,8 @@ dependencies {
     implementation("org.apache.flink", "flink-shaded-hadoop-2-uber", "2.4.1-10.0") {
         exclude("org.slf4j", "slf4j-log4j12")
     }
+    implementation("ch.qos.logback", "logback-classic")
+    implementation("ch.qos.logback", "logback-core")
 
     implementation("com.fasterxml.jackson.core", "jackson-databind")
     implementation("com.fasterxml.jackson.datatype", "jackson-datatype-jdk8")

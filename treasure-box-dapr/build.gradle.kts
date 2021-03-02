@@ -9,6 +9,8 @@ dependencies {
     implementation("org.springframework.boot", "spring-boot-starter-actuator")
     implementation("org.springframework.boot", "spring-boot-starter-webflux")
     testImplementation("org.springframework.boot", "spring-boot-starter-test")
+    implementation("ch.qos.logback", "logback-classic")
+    implementation("ch.qos.logback", "logback-core")
 
     implementation("io.dapr", "dapr-sdk", daprVersion)
     implementation("io.dapr", "dapr-sdk-springboot", daprVersion)

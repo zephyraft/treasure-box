@@ -8,8 +8,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.cfg.MapperConfig;
 import com.fasterxml.jackson.databind.introspect.AnnotatedField;
 import com.fasterxml.jackson.databind.introspect.AnnotatedMethod;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import zephyr.jackson.model.album.Album;
 import zephyr.jackson.model.album.Artist;
 
@@ -18,9 +17,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 public class JacksonJavaObjectDemo {
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(JacksonJavaObjectDemo.class);
 
     // 线程安全
     private static final ObjectMapper objectMapper = new ObjectMapper();
@@ -76,10 +74,7 @@ public class JacksonJavaObjectDemo {
         album.addMusician("Paul Chambers", "double bass");
 
         String jsonString = objectMapper.writeValueAsString(album);
-        LOGGER.info(jsonString);
-
-
-
+        log.info(jsonString);
     }
 
 }

@@ -6,23 +6,25 @@ tasks.named<Test>("test") {
     useJUnitPlatform()
 }
 
-val mybatisStarterVersion: String by project
-val junitVersion: String by project
-val mockitoVersion: String by project
-val hamcrestVersion: String by project
-val mockobjectsVersion: String by project
-val awaitilityVersion: String by project
-val webdrivermanagerVersion: String by project
-val seleniumVersion: String by project
-val guavaVersion: String by project
-
 dependencies {
+    val mybatisStarterVersion: String by project
+    val junitVersion: String by project
+    val mockitoVersion: String by project
+    val hamcrestVersion: String by project
+    val mockobjectsVersion: String by project
+    val awaitilityVersion: String by project
+    val webdrivermanagerVersion: String by project
+    val seleniumVersion: String by project
+    val guavaVersion: String by project
+
     implementation("org.springframework.boot", "spring-boot-starter")
     implementation("org.springframework.boot", "spring-boot-starter-web")
     implementation("org.springframework.boot", "spring-boot-starter-actuator")
     implementation("org.springframework.boot", "spring-boot-starter-jdbc")
     implementation("org.mybatis.spring.boot", "mybatis-spring-boot-starter", mybatisStarterVersion)
     implementation("javax.servlet", "javax.servlet-api")
+    implementation("ch.qos.logback", "logback-classic")
+    implementation("ch.qos.logback", "logback-core")
 
     testImplementation("org.springframework.boot", "spring-boot-starter-test")
     testImplementation("org.mybatis.spring.boot", "mybatis-spring-boot-starter-test", mybatisStarterVersion)

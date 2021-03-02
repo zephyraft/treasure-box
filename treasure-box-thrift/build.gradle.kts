@@ -3,9 +3,11 @@ plugins {
     id("org.jruyi.thrift") apply false
 }
 
-val libthriftVersion: String by project
-
 dependencies {
+    val libthriftVersion: String by project
+
+    implementation("ch.qos.logback", "logback-classic")
+    implementation("ch.qos.logback", "logback-core")
     implementation("org.apache.thrift", "libthrift", libthriftVersion)
 }
 

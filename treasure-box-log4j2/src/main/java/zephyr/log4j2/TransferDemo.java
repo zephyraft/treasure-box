@@ -1,9 +1,9 @@
-package zephyr.log;
+package zephyr.log4j2;
 
 import lombok.extern.slf4j.Slf4j;
-import zephyr.log.transfer.LogRunnable;
-import zephyr.log.transfer.TransactionFactory;
-import zephyr.log.transfer.Transfer;
+import zephyr.log4j2.transfer.LogRunnable;
+import zephyr.log4j2.transfer.TransactionFactory;
+import zephyr.log4j2.transfer.Transfer;
 
 import java.util.concurrent.*;
 

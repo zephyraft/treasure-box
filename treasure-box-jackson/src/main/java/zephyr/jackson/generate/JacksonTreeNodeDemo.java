@@ -6,16 +6,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.JsonNodeFactory;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.io.StringWriter;
 import java.io.Writer;
 
+@Slf4j
 public class JacksonTreeNodeDemo {
-    private static final Logger LOGGER = LoggerFactory.getLogger(JacksonTreeNodeDemo.class);
-
     public static void main(String[] args) throws IOException {
         // Create the node factory that gives us nodes.
         JsonNodeFactory factory = new JsonNodeFactory(false);
@@ -47,7 +45,7 @@ public class JacksonTreeNodeDemo {
 
             mapper.writeTree(generator, album);
             String jsonString = writer.toString();
-            LOGGER.info(jsonString);
+            log.info(jsonString);
         }
     }
 

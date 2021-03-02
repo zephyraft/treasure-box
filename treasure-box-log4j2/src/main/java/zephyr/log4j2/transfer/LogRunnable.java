@@ -1,4 +1,4 @@
-package zephyr.log.transfer;
+package zephyr.log4j2.transfer;
 
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.MDC;

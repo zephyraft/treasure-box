@@ -25,21 +25,19 @@ subprojects {
         sourceCompatibility = JavaVersion.VERSION_11
     }
 
-    val springBootDependenciesVersion: String by project
-    val springCloudDependenciesVersion: String by project
-    val springStatemachineBomVersion: String by project
-    val springDataReleaseTrainVersion: String by project
-    val reactorBomVersion: String by project
-    val jacksonBomVersion: String by project
-    val junitJupiterBomVersion: String by project
-    val lombokVersion: String by project
-
     // 公共依赖
     dependencies {
+        val springBootDependenciesVersion: String by project
+        val springCloudDependenciesVersion: String by project
+        val springDataReleaseTrainVersion: String by project
+        val reactorBomVersion: String by project
+        val jacksonBomVersion: String by project
+        val junitJupiterBomVersion: String by project
+        val lombokVersion: String by project
+
         // import a BOM
         implementation(platform("org.springframework.boot:spring-boot-dependencies:${springBootDependenciesVersion}"))
         implementation(platform("org.springframework.cloud:spring-cloud-dependencies:${springCloudDependenciesVersion}"))
-        implementation(platform("org.springframework.statemachine:spring-statemachine-bom:${springStatemachineBomVersion}"))
         implementation(platform("org.springframework.data:spring-data-releasetrain:${springDataReleaseTrainVersion}"))
         implementation(platform("io.projectreactor:reactor-bom:${reactorBomVersion}"))
         implementation(platform("com.fasterxml.jackson:jackson-bom:${jacksonBomVersion}"))
@@ -51,8 +49,6 @@ subprojects {
 
         // import dependencies
         implementation("org.slf4j", "slf4j-api")
-        implementation("ch.qos.logback", "logback-classic")
-        implementation("ch.qos.logback", "logback-core")
         compileOnly("org.projectlombok", "lombok")
         testCompileOnly("org.projectlombok", "lombok")
     }

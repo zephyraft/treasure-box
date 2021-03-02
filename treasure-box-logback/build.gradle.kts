@@ -1,11 +1,10 @@
-val logbackContribVersion: String by project
-val logstashLogbackEncoderVersion: String by project
-
 dependencies {
-    implementation("org.slf4j", "slf4j-api")
+    val logbackContribVersion: String by project
+    val logstashLogbackEncoderVersion: String by project
 
-    // === logback start ===
+// === logback start ===
     implementation("ch.qos.logback", "logback-classic")
+    implementation("ch.qos.logback", "logback-core")
 
     // 官方社区贡献，很久没维护了
     implementation("ch.qos.logback.contrib", "logback-json-classic", logbackContribVersion)

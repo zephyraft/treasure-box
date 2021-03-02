@@ -1,4 +1,4 @@
-package zephyr.log.transfer;
+package zephyr.log4j2.transfer;
 
 import java.security.SecureRandom;
 import java.util.UUID;

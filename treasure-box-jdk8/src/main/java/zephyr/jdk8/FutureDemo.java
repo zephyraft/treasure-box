@@ -49,7 +49,7 @@ public class FutureDemo {
         // NCPU是处理器的核的数目
         // UCPU是期望的CPU利用率 该值应该介于0和1之间
         // W/C是等待时间与计算时间的比率
-        // LOGGER.info("{}", Runtime.getRuntime().availableProcessors());
+        // log.info("{}", Runtime.getRuntime().availableProcessors());
 
         // 串行和多种并行方式的效率比较
         // 对集合进行 并行 计算有两种方式

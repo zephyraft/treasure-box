@@ -25,6 +25,7 @@ include(
     "treasure-box-jwt",
     "treasure-box-kafka",
     "treasure-box-kotlin",
+    "treasure-box-log4j2",
     "treasure-box-logback",
     "treasure-box-lombok",
     "treasure-box-markdown",
@@ -53,14 +54,14 @@ include(
 )
 
 pluginManagement {
-    val pluginKotlinVersion: String by settings
-    val pluginSpringBootVersion: String by settings
-    val pluginJibVersion: String by settings
-    val pluginShadowVersion: String by settings
-    val pluginThriftVersion: String by settings
-    val pluginNativeImageVersion: String by settings
-
     plugins {
+        val pluginKotlinVersion: String by settings
+        val pluginSpringBootVersion: String by settings
+        val pluginJibVersion: String by settings
+        val pluginShadowVersion: String by settings
+        val pluginThriftVersion: String by settings
+        val pluginNativeImageVersion: String by settings
+
         kotlin("jvm").version(pluginKotlinVersion).apply(false)
         kotlin("kapt").version(pluginKotlinVersion).apply(false)
         kotlin("plugin.serialization").version(pluginKotlinVersion).apply(false)

@@ -2,16 +2,14 @@ package zephyr.jackson.generate;
 
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonGenerator;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.io.StringWriter;
 import java.io.Writer;
 
+@Slf4j
 public class JacksonStreamDemo {
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(JacksonStreamDemo.class);
 
     public static void main(String[] args) throws IOException {
         JsonFactory factory = new JsonFactory();
@@ -32,7 +30,7 @@ public class JacksonStreamDemo {
             // flush buffer to writer
             generator.flush();
             String jsonString = writer.toString();
-            LOGGER.info(jsonString);
+            log.info(jsonString);
         }
     }
 

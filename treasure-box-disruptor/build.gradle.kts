@@ -1,3 +1,5 @@
 dependencies {
-    implementation("com.lmax", "disruptor", "3.4.2")
+    val disruptorVersion: String by project
+
+    implementation("com.lmax", "disruptor", disruptorVersion)
 }

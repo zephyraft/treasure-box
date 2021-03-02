@@ -1,4 +1,4 @@
-package zephyr.log.transfer;
+package zephyr.logback.transfer;
 
 public class Transfer {
     private String transactionId;
