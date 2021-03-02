@@ -8,7 +8,7 @@ import zephyr.log4j2.transfer.Transfer;
 import java.util.concurrent.*;
 
 @Slf4j
-public class TransferDemo {
+public class Log4j2TransferDemo {
 
     public static void main(String[] args) {
         ExecutorService executor = new ThreadPoolExecutor(
@@ -21,12 +21,12 @@ public class TransferDemo {
                 new ThreadPoolExecutor.AbortPolicy());
 
         TransactionFactory transactionFactory = new TransactionFactory();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; true; i++) {
             Transfer tx = transactionFactory.newInstance();
             Runnable task = new LogRunnable(tx);
             executor.submit(task);
         }
-        executor.shutdown();
-        log.error("", new RuntimeException("test error"));
+//        executor.shutdown();
+//        log.error("", new RuntimeException("test error"));
     }
 }
