@@ -1,6 +1,6 @@
-# treasure-box
+# Treasure-Box
 
-recipes of programming
+Recipes of Java Programming
 
 ## 依赖版本定义
 
