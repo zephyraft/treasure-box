@@ -25,7 +25,7 @@ include(
     "treasure-box-jwt",
     "treasure-box-kafka",
     "treasure-box-kotlin",
-    "treasure-box-log",
+    "treasure-box-logback",
     "treasure-box-lombok",
     "treasure-box-markdown",
     "treasure-box-netty",
