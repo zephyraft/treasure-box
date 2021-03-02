@@ -5,6 +5,7 @@ include(
     "treasure-box-concurrent",
     "treasure-box-dapr",
     "treasure-box-design-pattern",
+    "treasure-box-disruptor",
     "treasure-box-elasticsearch",
     "treasure-box-flink",
     "treasure-box-gateway",
