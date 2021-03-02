@@ -2,6 +2,8 @@
 
 Recipes of Java Programming
 
+具体文档查看项目内README.md
+
 ## 依赖版本定义
 
 依赖版本统一定义在gradle.properties
