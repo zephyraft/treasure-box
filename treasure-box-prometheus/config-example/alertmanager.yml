@@ -1,0 +1,16 @@
+global:
+  resolve_timeout: 5m
+
+route:
+  group_by: ['alertname']
+  group_wait: 10s
+  group_interval: 10s
+  repeat_interval: 1h
+  receiver: 'default-receiver'
+receivers:
+  - name: 'default-receiver'
+    # webhook_configs:
+    # - url: 'https://oapi.dingtalk.com/robot/send?access_token=4c53a799b68ed52ffd111b4860e41e31d7692f7a421c928980c233fc1c58c7cc'
+    slack_configs:
+      - send_resolved: true
+        api_url: https://hooks.slack.com/services/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
