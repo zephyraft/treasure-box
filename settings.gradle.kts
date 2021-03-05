@@ -19,6 +19,7 @@ include(
     "treasure-box-jdk9:module-lib",
     "treasure-box-jdk10",
     "treasure-box-jdk11",
+    "treasure-box-jfr",
     "treasure-box-jmh",
     "treasure-box-just",
     "treasure-box-jvm",
