@@ -14,6 +14,7 @@ include(
     "treasure-box-graalvm",
     "treasure-box-guava",
     "treasure-box-jackson",
+    "treasure-box-javassist",
     "treasure-box-jdk8",
     "treasure-box-jdk9",
     "treasure-box-jdk9:module-client",
