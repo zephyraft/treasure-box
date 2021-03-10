@@ -1,6 +1,7 @@
 rootProject.name = "treasure-box"
 
 include(
+    "treasure-box-asm",
     "treasure-box-bitmap",
     "treasure-box-concurrent",
     "treasure-box-dapr",
