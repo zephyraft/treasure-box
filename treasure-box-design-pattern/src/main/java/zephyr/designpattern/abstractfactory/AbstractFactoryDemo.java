@@ -8,7 +8,7 @@ import zephyr.designpattern.abstractfactory.factory.Tray;
 public class AbstractFactoryDemo {
 
     public static void main(String[] args) {
-        Factory factory = Factory.getFactory("zephyr.abstractfactory.listfactory.ListFactory");
+        Factory factory = Factory.getFactory("zephyr.designpattern.abstractfactory.listfactory.ListFactory");
 
         Link people = factory.createLink("人民日报", "http://www.people.com.cn");
         Link gmw = factory.createLink("光明日报", "http://www.gmw.cn");
