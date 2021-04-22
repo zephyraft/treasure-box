@@ -1,15 +1,11 @@
-package zephyr.jdk11.unsafe;
+package zephyr.arrow.unsafe;
 
 import sun.misc.Unsafe;
 
 import java.lang.reflect.Field;
 
-/**
- * 用于隐藏jdk9以后 unsafe方法报警告的问题
- */
-public class UnsafeHack {
+public class DisableUnsafeWarning {
 
-    // https://stackoverflow.com/questions/46454995/how-to-hide-warning-illegal-reflective-access-in-java-9-without-jvm-argument
     public static void disableWarning() {
         try {
             Field theUnsafe = Unsafe.class.getDeclaredField("theUnsafe");
@@ -23,4 +19,5 @@ public class UnsafeHack {
             // ignore
         }
     }
+
 }
