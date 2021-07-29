@@ -53,6 +53,7 @@ include(
     "treasure-box-tdd",
     "treasure-box-thrift",
     "treasure-box-tribuo",
+    "treasure-box-vertx",
     "treasure-box-weka",
     "treasure-box-zookeeper",
     ""
