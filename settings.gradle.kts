@@ -5,6 +5,7 @@ include(
     "treasure-box-asm",
     "treasure-box-bitmap",
     "treasure-box-bytebuddy",
+    "treasure-box-classloader",
     "treasure-box-concurrent",
     "treasure-box-dapr",
     "treasure-box-design-pattern",
