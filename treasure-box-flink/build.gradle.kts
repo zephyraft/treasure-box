@@ -21,6 +21,8 @@ dependencies {
     val hiveVersion: String by project
     val hadoopVersion: String by project
 
+    implementation("org.apache.commons:commons-math3:3.6.1")
+
     implementation("org.apache.flink", "flink-java", flinkVersion)
     implementation("org.apache.flink", "flink-streaming-java_${scalaBinaryVersion}", flinkVersion)
     implementation("org.apache.flink", "flink-clients_${scalaBinaryVersion}", flinkVersion)
