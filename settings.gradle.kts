@@ -1,7 +1,6 @@
 rootProject.name = "treasure-box"
 
 include(
-    "treasure-box-spi",
     "treasure-box-arrow",
     "treasure-box-asm",
     "treasure-box-bitmap",
@@ -46,6 +45,10 @@ include(
     "treasure-box-ribbon",
     "treasure-box-rxjava",
     "treasure-box-sentinel",
+    "treasure-box-spi",
+    "treasure-box-spi:api",
+    "treasure-box-spi:app",
+    "treasure-box-spi:impl",
     "treasure-box-springboot",
     "treasure-box-springboot-cache",
     "treasure-box-springboot-security",
