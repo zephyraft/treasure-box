@@ -18,7 +18,7 @@ dependencies {
     // If needed, force conflict resolution for okhttp3.
     configurations.all {
         resolutionStrategy {
-            this.force("com.squareup.okhttp3:okhttp:4.2.2")
+            this.force("com.squareup.okhttp3:okhttp:4.10.0")
         }
     }
 }
