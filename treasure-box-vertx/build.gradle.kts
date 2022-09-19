@@ -13,7 +13,7 @@ repositories {
     mavenCentral()
 }
 
-val vertxVersion = "4.1.2"
+val vertxVersion = "4.3.3"
 val junitJupiterVersion = "5.7.0"
 
 val mainVerticleName = "com.example.starter.MainVerticle"
